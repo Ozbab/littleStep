@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
       <footer className="bg-gray-800 text-white py-12">
@@ -8,25 +10,25 @@ export default function Footer() {
                 Little Step
               </h3>
               <p className="text-gray-400 text-sm">
-                Safe and high‑quality children's clothing.
+                Safe and high‑quality children&#39;s clothing.
               </p>
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="/about" className="hover:text-pink-400 transition">About Us</a></li>
-                <li><a href="/contact" className="hover:text-pink-400 transition">Contact</a></li>
-                <li><a href="#" className="hover:text-pink-400 transition">Careers</a></li>
-                <li><a href="#" className="hover:text-pink-400 transition">Our Stores</a></li>
+                <li><Link href="/about" className="hover:text-pink-400 transition">About Us</Link></li>
+                <li><Link href="/contact" className="hover:text-pink-400 transition">Contact</Link></li>
+                <li><Link href="#" className="hover:text-pink-400 transition">Careers</Link></li>
+                <li><Link href="#" className="hover:text-pink-400 transition">Our Stores</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Customer Service</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-pink-400 transition">FAQ</a></li>
-                <li><a href="#" className="hover:text-pink-400 transition">Returns & Exchanges</a></li>
-                <li><a href="#" className="hover:text-pink-400 transition">Delivery</a></li>
-                <li><a href="#" className="hover:text-pink-400 transition">Order Tracking</a></li>
+                <li><Link href="#" className="hover:text-pink-400 transition">FAQ</Link></li>
+                <li><Link href="#" className="hover:text-pink-400 transition">Returns & Exchanges</Link></li>
+                <li><Link href="#" className="hover:text-pink-400 transition">Delivery</Link></li>
+                <li><Link href="#" className="hover:text-pink-400 transition">Order Tracking</Link></li>
               </ul>
             </div>
             <div>

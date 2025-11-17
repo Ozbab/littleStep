@@ -12,7 +12,7 @@ export const metadata = {
       <main className="min-h-screen bg-gray-50 text-gray-900">
         <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 py-14 md:py-20 text-center">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
                 <Image
                 src="/img/thumbnail.jpg"
                 width={80}
@@ -24,14 +24,12 @@ export const metadata = {
                 href="/"
                 className="hover:opacity-90 transition"
                 >
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight 
-                                bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent cursor-pointer">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent cursor-pointer">
                     About Little Step
                 </h1>
                 </Link>
             </div>
-                <p className="mt-3 md:mt-4 max-w-3xl mx-auto text-xs md:text-sm 
-                                bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent font-semibold">
+                <p className="mt-2 sm:mt-3 md:mt-4 max-w-2xl sm:max-w-3xl mx-auto text-xs sm:text-sm bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent font-semibold">
                     Little Steps, Big Happiness
                 </p>
         </div>
@@ -40,7 +38,7 @@ export const metadata = {
   
         <div className="max-w-6xl mx-auto px-4">
           {/* 3 ÖZELLİK KARTI: Hakkımızda / Misyon / Vizyon */}
-          <section className="grid md:grid-cols-2 gap-6 -mt-10 md:-mt-12">
+          <section className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 -mt-6 sm:-mt-8 md:-mt-12">
             {[
               {
                 title: "Mission",
@@ -64,7 +62,7 @@ export const metadata = {
           </section>
   
           {/* İSTATİSTİK ŞERİDİ */}
-          <section className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <section className="mt-10 md:mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {[
               { k: "Product", v: "250+" },
               { k: "Delivery", v: "2-3 days" },
@@ -84,7 +82,7 @@ export const metadata = {
           {/* METİN BLOĞU */}
           <section className="mt-12 md:mt-16 space-y-6">
             <h2 className="text-2xl font-bold">Why Little Step?</h2>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed text-justify">
             Founded in 2025 in Istanbul, Little Step Kidswear is a children’s clothing brand dedicated to delivering safe, stylish, and high-quality apparel for every child. Combining creativity, comfort, and durability, we design collections that bring joy and confidence to families around the world. Our product line includes both our own original designs and licensed collections such as Disney and Barbie, crafted with the highest standards of quality and care. With a growing production capacity and a strong e-commerce infrastructure, Little Step aims to make premium children’s fashion accessible to everyone.
             </p>
           </section>
@@ -92,7 +90,7 @@ export const metadata = {
           {/* ZAMAN ÇİZGİSİ / SÜREÇ */}
           <section className="mt-10 md:mt-14">
             <h3 className="text-xl font-bold">How we work?</h3>
-            <ol className="relative border-s border-gray-200 mt-6 space-y-8">
+            <ol className="relative border-s border-gray-200 mt-6 space-y-8 pl-4 sm:pl-6">
               {[
                 { h: "Choise & Discover", p: "Filter collections by categories, add them to your favorites." },
                 { h: "Pay Safely", p: "SSL certified infrastructure and different pay options." },
@@ -112,7 +110,7 @@ export const metadata = {
           {/* MÜŞTERİ YORUMU */}
           <section className="mt-12 md:mt-16">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-              <p className="italic">
+              <p className="italic text-sm sm:text-base">
                 “The fabric quality is great, the delivery was very fast. The sizes were perfect, I would definitely recommend it.”
               </p>
               <div className="mt-3 text-sm text-gray-600">— Beyza, İstanbul</div>
@@ -120,8 +118,8 @@ export const metadata = {
           </section>
   
           {/* CTA */}
-          <section className="mt-12 md:mt-16 mb-16">
-            <div className="rounded-2xl p-6 md:p-8 bg-gradient-to-r from-pink-500 to-orange-400 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <section className="mt-12 md:mt-16 mb-4">
+            <div className="rounded-2xl p-6 sm:p-7 md:p-8 bg-gradient-to-r from-pink-500 to-orange-400 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <h4 className="text-2xl font-extrabold">Any questions?</h4>
                 <p className="opacity-90">Our support team is pleased to help you.</p>

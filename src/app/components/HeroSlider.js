@@ -8,20 +8,26 @@ export default function HeroSlider() {
 
   const slides = [
     { 
-      title: '🏰 Disney Collection', 
+      title: '10% OFF on Orders Over 1000₺', 
+      desc: 'Shop more, save more — limited time only!', 
+      gradient: 'from-green-500 to-emerald-700',
+      link: '#'
+    },
+    { 
+      title: 'Disney Collection', 
       desc: '', 
       gradient: 'from-purple-500 to-purple-700',
       link: '/category/disney'
     },
     { 
-      title: '✨ New Dresses', 
+      title: 'New Dresses', 
       desc: '', 
       gradient: 'from-pink-500 to-red-500',
       link: '/category/dress'
     },
     { 
-      title: '👼🏻 Baby Rompers', 
-      desc: "27 Ekim'e özel tüm ürünlerde büyük indirim!", 
+      title: 'Baby Rompers', 
+      desc: "", 
       gradient: 'from-blue-400 to-cyan-400',
       link: '/category/baby'
     }
@@ -51,11 +57,23 @@ export default function HeroSlider() {
               {slide.title}
             </h1>
             <p className="text-base md:text-xl mb-8">{slide.desc}</p>
-            <Link href={slide.link}>
-              <button className="bg-white text-gray-800 px-6 md:px-8 py-2 md:py-3 rounded-full font-bold hover:shadow-xl transition transform hover:-translate-y-1">
-                Hemen Keşfet
+            {slide.title === '10% OFF on Orders Over 1000₺' ? (
+              <button
+                onClick={() => {
+                  const el = document.getElementById('categories');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-white text-gray-800 px-6 md:px-8 py-2 md:py-3 cursor-pointer rounded-full font-bold hover:shadow-xl transition transform hover:-translate-y-1"
+              >
+                Discover Now
               </button>
-            </Link>
+            ) : (
+              <Link href={slide.link}>
+                <button className="bg-white text-gray-800 px-6 md:px-8 py-2 md:py-3 cursor-pointer rounded-full font-bold hover:shadow-xl transition transform hover:-translate-y-1">
+                  Discover Now
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

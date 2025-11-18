@@ -26,7 +26,7 @@ export default function Footer() {
               <h4 className="font-bold mb-4">Customer Service</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><Link href="#" className="hover:text-pink-400 transition">FAQ</Link></li>
-                <li><Link href="#" className="hover:text-pink-400 transition">Returns & Exchanges</Link></li>
+                <li><Link href="/returns-exchange" className="text-gray-700 hover:text-pink-500...">Returns & Exchange</Link></li>
                 <li><Link href="#" className="hover:text-pink-400 transition">Delivery</Link></li>
                 <li><Link href="#" className="hover:text-pink-400 transition">Order Tracking</Link></li>
               </ul>

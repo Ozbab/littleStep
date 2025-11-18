@@ -1,11 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import HeroSlider from '@/components/HeroSlider';
 import CategoryCard from '@/components/CategoryCard';
 import { categories } from '@/lib/data';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter();

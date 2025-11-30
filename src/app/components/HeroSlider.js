@@ -54,7 +54,7 @@ export default function HeroSlider() {
   const slide = slides[currentSlide];
 
   return (
-    <div className={`relative overflow-hidden transition-all duration-700 ease-in-out ${slide.video ? 'h-[500px] md:h-[700px]' : 'h-64 md:h-96'}`}>
+    <div className={`relative overflow-hidden transition-all duration-700 ease-in-out ${slide.video ? 'h-[400px] md:h-[550px] lg:h-[730px]' : 'h-64 md:h-96 lg:h-[450px]'}`}>
       {slide.video ? (
         <video
           key={currentSlide}
@@ -66,7 +66,7 @@ export default function HeroSlider() {
           onEnded={() => {
             setCurrentSlide(1);
           }}
-          className="absolute inset-0 w-full h-full object-cover [image-rendering:-webkit-optimize-contrast] [image-rendering:crisp-edges]"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       ) : (
         <div

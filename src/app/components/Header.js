@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ShoppingCart, Heart, User, Search, Menu, X } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
+import Image from 'next/image';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,8 +19,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent cursor-pointer">
-              Little Step
+            <div className="flex items-center gap-2 cursor-pointer">
+              <Image
+                src="/img/thumbnail.jpg"
+                alt="Little Step Logo"
+                width={80}
+                height={80}
+                className="object-contain w-20 h-20 md:w-20 md:h-20 rounded-xl"
+              />
+              <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
+                Little Step
+              </span>
             </div>
           </Link>
           

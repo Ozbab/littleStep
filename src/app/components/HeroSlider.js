@@ -8,6 +8,14 @@ export default function HeroSlider() {
 
   const slides = [
     { 
+      video: true,
+      src: '/videos/intro_little_step.mp4',
+      gradient: '',
+      title: '',
+      desc: '',
+      link: ''
+    },
+    { 
       title: '10% OFF on Orders Over 1000₺', 
       desc: 'Shop more, save more — limited time only!', 
       gradient: 'from-green-500 to-emerald-700',
@@ -35,48 +43,64 @@ export default function HeroSlider() {
 
   // geçiş aralığı 7 sn
   useEffect(() => {
+    if (slides[currentSlide].video) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 7000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, currentSlide]);
 
   // sadece aktif slaytı al
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative h-64 md:h-96 overflow-hidden">
-      <div
-        key={currentSlide}
-        className={`absolute inset-0 bg-gradient-to-r ${slide.gradient}
-                    transition-all duration-[1500ms] ease-in-out translate-x-0 opacity-100`}
-      >
-        <div className="flex items-center justify-center h-full text-white text-center px-4">
-          <div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-              {slide.title}
-            </h1>
-            <p className="text-base md:text-xl mb-8">{slide.desc}</p>
-            {slide.title === '10% OFF on Orders Over 1000₺' ? (
-              <button
-                onClick={() => {
-                  const el = document.getElementById('categories');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="bg-white text-gray-800 px-6 md:px-8 py-2 md:py-3 cursor-pointer rounded-full font-bold hover:shadow-xl transition transform hover:-translate-y-1"
-              >
-                Discover Now
-              </button>
-            ) : (
-              <Link href={slide.link}>
-                <button className="bg-white text-gray-800 px-6 md:px-8 py-2 md:py-3 cursor-pointer rounded-full font-bold hover:shadow-xl transition transform hover:-translate-y-1">
+    <div className={`relative overflow-hidden transition-all duration-700 ease-in-out ${slide.video ? 'h-[500px] md:h-[700px]' : 'h-64 md:h-96'}`}>
+      {slide.video ? (
+        <video
+          key={currentSlide}
+          src={slide.src}
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          onEnded={() => {
+            setCurrentSlide(1);
+          }}
+          className="absolute inset-0 w-full h-full object-cover [image-rendering:-webkit-optimize-contrast] [image-rendering:crisp-edges]"
+        />
+      ) : (
+        <div
+          key={currentSlide}
+          className={`absolute inset-0 bg-gradient-to-r ${slide.gradient}
+                      transition-all duration-[1500ms] ease-in-out translate-x-0 opacity-100`}
+        >
+          <div className="flex items-center justify-center h-full text-white text-center px-4">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+                {slide.title}
+              </h1>
+              <p className="text-base md:text-xl mb-8">{slide.desc}</p>
+              {slide.title === '10% OFF on Orders Over 1000₺' ? (
+                <button
+                  onClick={() => {
+                    const el = document.getElementById('categories');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="bg-white text-gray-800 px-6 md:px-8 py-2 md:py-3 cursor-pointer rounded-full font-bold hover:shadow-xl transition transform hover:-translate-y-1"
+                >
                   Discover Now
                 </button>
-              </Link>
-            )}
+              ) : (
+                <Link href={slide.link}>
+                  <button className="bg-white text-gray-800 px-6 md:px-8 py-2 md:py-3 cursor-pointer rounded-full font-bold hover:shadow-xl transition transform hover:-translate-y-1">
+                    Discover Now
+                  </button>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Dots */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">

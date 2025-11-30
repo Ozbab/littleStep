@@ -10,7 +10,7 @@ export default function Header() {
   const { cartCount, favCount } = useCart();
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-md">
       <div className="bg-gradient-to-r from-pink-400 to-orange-300 text-white text-center py-2 text-sm font-medium">  
           ⭐️ 10% discount on your first purchase ⭐️
       </div>
